@@ -1,0 +1,35 @@
+# Ignore node_modules (obviously)
+node_modules/
+
+# Build folders (for compiled output)
+dist/
+build/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE/editor stuff
+.vscode/
+.idea/
+
+# Coverage output
+coverage/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Optional: Ignore migrations if auto-generated
+migrations/
+
+# Optional: Ignore database or uploads
+uploads/
+public/
