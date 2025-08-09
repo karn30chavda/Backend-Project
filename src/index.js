@@ -3,8 +3,10 @@ import connectDB from "./db/dbconnection.js";
 
 dotenv.config({ path: "./.env" });
 
+// Server Port using environment variable, and if not available, default to 8000
 const Port = process.env.PORT || 8000;
 
+// Connect to MongoDB and start the server
 connectDB()
   .then(() => {
     app.listen(Port, () => {

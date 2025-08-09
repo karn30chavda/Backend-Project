@@ -1,4 +1,4 @@
-//  <--------- RequestHandler using Promise method --------->
+// This file contains a utility function to handle asynchronous request handlers in Express.js.
 const asyncHandler = (requestHandler) => {
   (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
@@ -7,7 +7,7 @@ const asyncHandler = (requestHandler) => {
 export default asyncHandler;
 
 /*
- <--------- These is Same mehtod using try and catch method --------->
+ This file contains a utility function to handle asynchronous request handlers in Express.js using try-catch.
 const asyncHandler = (fn) => async (req, res, next) => {
   try {
     await fn(req, res, next);

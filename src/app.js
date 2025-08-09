@@ -4,7 +4,7 @@ import express from "express";
 
 const app = express();
 
-// Config for the CORS origin error.
+// this is for the CORS origin error.
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
@@ -12,10 +12,10 @@ app.use(
   })
 );
 
-// Config for the Json data API limits to avoid app Crash.
+// this is for the JSON data API limits to avoid app Crash.
 app.use(express.json({ limit: "16kb" }));
 
-// Config for the URL data API limits to avoid app Crash.
+// this is for the URL data API limits to avoid app Crash.
 app.use(
   express.urlencoded({
     extended: true,
@@ -23,10 +23,10 @@ app.use(
   })
 );
 
-// Config to store assets images and all in public folder.
+// this is for the static files in the public folder.
 app.use(express.static("public"));
 
-// Config to store user Cookies in the server.
+// this is for the user Cookies in the server.
 app.use(cookieParser());
 
 export default app;
