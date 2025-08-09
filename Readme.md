@@ -21,6 +21,7 @@ Learnig from Chai aur Backend from Hitesh Choudhary Sir (Chai or Code)
   /routes
   /middlewares
   /models
+  /utils
   app.js
   ```
 
