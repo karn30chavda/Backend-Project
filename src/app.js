@@ -4,7 +4,6 @@ import express from "express";
 
 const app = express();
 
-// this is for the CORS origin error.
 app.use(
   cors({
     origin: process.env.CORS_ORIGIN,
@@ -12,21 +11,15 @@ app.use(
   })
 );
 
-// this is for the JSON data API limits to avoid app Crash.
 app.use(express.json({ limit: "16kb" }));
-
-// this is for the URL data API limits to avoid app Crash.
-app.use(
-  express.urlencoded({
-    extended: true,
-    limit: "16kb",
-  })
-);
-
-// this is for the static files in the public folder.
+app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
-
-// this is for the user Cookies in the server.
 app.use(cookieParser());
+
+// importing Routes
+import userRouter from "./routes/user.routes.js";
+
+// route declaration
+app.use("/api/v1/users", userRouter);
 
 export default app;

@@ -32,7 +32,6 @@ const userSchema = new Schema(
     },
     coverImage: {
       type: String, // Cloudinary URL
-      required: true,
     },
     password: {
       type: String,
